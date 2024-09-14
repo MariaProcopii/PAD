@@ -41,7 +41,8 @@ Service Discovery (Java): Registers and discovers microservices dynamically.
 
 _**System Architecture Diagram:**_
 
-![PAD drawio](https://github.com/user-attachments/assets/29b94f48-097d-45ba-a4f6-c20c4cb991cf)
+![PAD (1) drawio](https://github.com/user-attachments/assets/5f1601d3-5736-4f82-81a3-13857ad35ed2)
+
 
 ## Technology Stack and Communication Patterns
 ---
