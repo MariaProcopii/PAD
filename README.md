@@ -13,7 +13,13 @@ _Real-World Example:_
 1. Microservices are used by Facebook's architecture to manage several elements such as messaging and authentication. 
 2. Amazon uses a specialized microservice to process shipping orders.
 3. Spotify uses microservice for user account management.
-Just as I want to do with recipe management and user authentication in this project and ensure that each component scales and updates independently of the others by designing separate services.
+
+CookingMaster - cooking blog platform built with microservices, allowing users to share recipes, vote, get real-time feedback, and receive personalized recipe recommendations.
+User Management Service (C#): Handles user authentication and profiles.
+Cooking Blog Service (C# with WebSockets): Manages recipe posting, voting, and live feedback.
+Recipe Recommendation Service (Python): Provides personalized recipe suggestions based on user interactions.
+Gateway Service (Java): Routes requests and manages service discovery.
+Service Discovery (Java): Registers and discovers microservices dynamically.
 
 ## Service Boundaries
 ---
@@ -281,7 +287,7 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
     }
   ```
 
-5. WebSocket /comment (Opens a WebSocket connection for real-time commenting on a recipe ):
+5. WebSocket /recipe/comment/{blogId} (Opens a WebSocket connection for real-time commenting on a recipe ):
   * Request (JWT token as a query parameter + JSON):
     The client will open a WebSocket connection to /comment in the Cooking Blog Service, passing the JWT token as a query parameter
     (e.g., ws://cookingblog.com/comment?token=JWT-TOKEN).
