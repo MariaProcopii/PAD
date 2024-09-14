@@ -288,7 +288,7 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
     }
   ```
 
-5. WebSocket /recipe/comment/{blogId} (Opens a WebSocket connection for real-time commenting on a recipe ):
+5. WebSocket /recipe/comment/{recipeId} (Opens a WebSocket connection for real-time commenting on a recipe ):
   * Request (JWT token as a query parameter + JSON):
     The client will open a WebSocket connection to /comment in the Cooking Blog Service, passing the JWT token as a query parameter
     (e.g., ws://cookingblog.com/comment?token=JWT-TOKEN).
