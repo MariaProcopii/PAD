@@ -15,11 +15,11 @@ _Real-World Example:_
 3. Spotify uses microservice for user account management.
 
 CookingMaster - cooking blog platform built with microservices, allowing users to share recipes, vote, get real-time feedback, and receive personalized recipe recommendations.
-User Management Service (C#): Handles user authentication and profiles.
-Cooking Blog Service (C# with WebSockets): Manages recipe posting, voting, and live feedback.
-Recipe Recommendation Service (Python): Provides personalized recipe suggestions based on user interactions.
-Gateway Service (Java): Routes requests and manages service discovery.
-Service Discovery (Java): Registers and discovers microservices dynamically.
+1. User Management Service (C#): Handles user authentication and profiles.
+2. Cooking Blog Service (C# with WebSockets): Manages recipe posting, voting, and live feedback.
+3. Recipe Recommendation Service (Python): Provides personalized recipe suggestions based on user interactions.
+4. Gateway Service (Java): Routes requests and manages service discovery.
+5. Service Discovery (Java): Registers and discovers microservices dynamically.
 
 ## Service Boundaries
 ---
