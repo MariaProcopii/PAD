@@ -97,10 +97,8 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
   * Request (JSON):
   ```json
   {
-    "username": "string",
     "email": "string",
-    "password": "string",
-    "bio": "string"
+    "password": "string"
   }
   ```
   * Response (JSON):
@@ -117,7 +115,7 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
     "message": "Validation error."
   }
   ```
-2. `POST` /login ( Authenticates a user and provides a JWT token ):
+2. `POST` /login ( Authenticates a user and provides an access Token ):
   * Request (JSON):
   ```json
   {
@@ -140,12 +138,12 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
     }
   ```
 3. `PUT` /profile/edit/{id} ( Edits user profile ):
-  * Request (query parameters + jwt token in Header + JSON)
+  * Request (query parameters + access Token in Header + JSON)
   ```json
     {
     "username": "string",
     "email": "string",
-    "bio": "string"
+    "password": "string"
     }
   ```
   * Response (JSON):
@@ -170,8 +168,7 @@ Cooking Blog Service Database - will store recipe details such as title, descrip
   ```json
     {
     "username": "string",
-    "email": "string",
-    "bio": "string"
+    "email": "string"
     }
   ```
   `401` Unauthorized:
