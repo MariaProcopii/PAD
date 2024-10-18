@@ -30,9 +30,12 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
+
 
 var app = builder.Build();
 
@@ -43,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseMiddleware<RequestTimeoutMiddleware>(TimeSpan.FromSeconds(10));
+app.UseMiddleware<RequestTimeoutMiddleware>(TimeSpan.FromSeconds(3));
 app.MapIdentityApi<IdentityUser>();
 
 app.UseHttpsRedirection();
@@ -58,5 +61,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseDiscoveryClient();
+
+app.MapHealthChecks("/health");
 
 app.Run();

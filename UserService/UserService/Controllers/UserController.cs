@@ -19,7 +19,7 @@ namespace UserService.Controllers
         [Authorize]
         public async Task<IActionResult> GetUserById(string id)
         {
-            await Task.Delay(15000);
+            // await Task.Delay(15000);
             var user = await _userService.GetUserById(id);
             if (user == null) return NotFound("User not found.");
             UserInfoDTO userInfoDto = new UserInfoDTO

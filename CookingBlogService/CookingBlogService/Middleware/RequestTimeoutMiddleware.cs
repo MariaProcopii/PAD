@@ -19,7 +19,7 @@ public class RequestTimeoutMiddleware
         var task = _next(context);
         var completedTask = await Task.WhenAny(task, Task.Delay(Timeout.Infinite, cts.Token));
 
-        if (completedTask == task)
+        if (completedTask == task || context.WebSockets.IsWebSocketRequest)
         {
             await task;
         }

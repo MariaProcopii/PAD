@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
           <PrivateAssets>all</PrivateAssets>
@@ -18,14 +19,18 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.10" />
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
         <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.2.8" />
         <PackageReference Include="Steeltoe.Discovery.Eureka" Version="3.2.8" />
+        <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.8" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.0" />
+        <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.2" />
     </ItemGroup>
 
     <ItemGroup>

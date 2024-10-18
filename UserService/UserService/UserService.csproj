@@ -25,6 +25,7 @@
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
         <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.2.8" />
         <PackageReference Include="Steeltoe.Discovery.Eureka" Version="3.2.8" />
+        <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.8" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.0" />
