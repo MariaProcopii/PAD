@@ -1,5 +1,6 @@
 using CookingBlogService.WebSockets;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace CookingBlogService.Controllers;
 

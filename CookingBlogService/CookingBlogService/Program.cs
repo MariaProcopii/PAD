@@ -1,7 +1,6 @@
 using CookingBlogService.Data;
 using CookingBlogService.Middleware;
 using CookingBlogService.Redis;
-using CookingBlogService.WebSockets;
 using Microsoft.EntityFrameworkCore;
 using Steeltoe.Discovery.Client;
 
@@ -33,7 +32,6 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<RequestTimeoutMiddleware>(TimeSpan.FromSeconds(3));
 
-// Enable WebSockets
 var webSocketOptions = new WebSocketOptions
 {
     KeepAliveInterval = TimeSpan.FromSeconds(120)
@@ -42,11 +40,11 @@ app.UseWebSockets(webSocketOptions);
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
-
 app.UseCors("AllowAllOrigins");
-
 app.MapControllers();
+
+// RedisSubscriber is started
+app.Services.GetRequiredService<RedisSubscriber>();
 
 app.UseDiscoveryClient();
 
