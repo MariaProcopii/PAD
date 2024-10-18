@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserService.DTO;
+using UserService.Utils;
 
 namespace UserService.Controllers
 {
@@ -8,9 +9,9 @@ namespace UserService.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService.Services.UserService _userService;
+        private readonly IUserService _userService;
 
-        public UserController(UserService.Services.UserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }

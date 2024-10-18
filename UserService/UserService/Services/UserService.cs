@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Identity;
+using UserService.Utils;
 
 namespace UserService.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly UserManager<IdentityUser> _userManager;
 

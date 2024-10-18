@@ -5,6 +5,7 @@ using Steeltoe.Discovery.Client;
 using Swashbuckle.AspNetCore.Filters;
 using UserService.Data;
 using UserService.Middleware;
+using UserService.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,8 @@ builder.Services.AddDiscoveryClient(builder.Configuration);
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddScoped<UserService.Services.UserService>();
+// builder.Services.AddScoped<UserService.Services.UserService>();
+builder.Services.AddScoped<IUserService, UserService.Services.UserService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
