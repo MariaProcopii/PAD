@@ -6,11 +6,11 @@ public static class RedisPublisher
 {
     private static readonly ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("my-redis-db");
 
-    public static async Task PublishMessage(string message, string senderSocketId)
+    public static async Task PublishMessage(string room, string message, string senderSocketId)
     {
         var pubsub = redis.GetSubscriber();
         var messageWithSender = $"{senderSocketId}:{message}";
 
-        await pubsub.PublishAsync("chatroom", messageWithSender);
+        await pubsub.PublishAsync(room, messageWithSender);
     }
 }

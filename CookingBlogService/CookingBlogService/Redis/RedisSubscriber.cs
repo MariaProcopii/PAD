@@ -10,19 +10,18 @@ public class RedisSubscriber
     public RedisSubscriber()
     {
         _redis = ConnectionMultiplexer.Connect("my-redis-db");
-        Subscribe();
     }
 
-    private void Subscribe()
+    public void SubscribeToRoom(string room)
     {
         var subscriber = _redis.GetSubscriber();
-        subscriber.Subscribe("chatroom", async (channel, message) =>
+        subscriber.Subscribe(room, async (channel, message) =>
         {
-            await HandleIncomingMessage(message);
+            await HandleIncomingMessage(room, message);
         });
     }
 
-    private async Task HandleIncomingMessage(RedisValue message)
+    private async Task HandleIncomingMessage(string room, RedisValue message)
     {
         var messageParts = message.ToString().Split(':', 2);
         if (messageParts.Length == 2)
@@ -30,7 +29,7 @@ public class RedisSubscriber
             var senderSocketId = messageParts[0];
             var actualMessage = messageParts[1];
 
-            await WebSocketConnectionManager.SendMessageToAllAsync(actualMessage, senderSocketId);
+            await WebSocketConnectionManager.SendMessageToRoomAsync(room, actualMessage, senderSocketId);
         }
     }
 }
