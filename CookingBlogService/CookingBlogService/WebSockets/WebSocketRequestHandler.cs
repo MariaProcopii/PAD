@@ -19,19 +19,17 @@ public static class WebSocketRequestHandler
             var buffer = new byte[1024 * 4];
             WebSocketReceiveResult result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
 
-            // Receive messages from the client and broadcast to all other clients
+            // broadcast
             while (!result.CloseStatus.HasValue)
             {
                 var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
                 Console.WriteLine($"Received message from {socketId}: {message}");
-
-                // Publish the message to Redis
+                
                 await RedisPublisher.PublishMessage(message, socketId);
 
                 result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
             }
 
-            // Remove the socket when connection is closed
             await WebSocketConnectionManager.RemoveSocket(socketId);
         }
         else

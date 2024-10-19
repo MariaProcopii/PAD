@@ -16,7 +16,6 @@ builder.Services.AddDiscoveryClient(builder.Configuration);
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
 
-// builder.Services.AddScoped<UserService.Services.UserService>();
 builder.Services.AddScoped<IUserService, UserService.Services.UserService>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -41,6 +40,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.MapHealthChecks("/user/health");
 
 if (app.Environment.IsDevelopment())
 {
@@ -49,6 +49,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseMiddleware<RequestTimeoutMiddleware>(TimeSpan.FromSeconds(3));
+app.UseMiddleware<HealthMonitoringMiddleware>();
 app.MapIdentityApi<IdentityUser>();
 
 app.UseHttpsRedirection();
@@ -63,7 +64,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseDiscoveryClient();
-
-app.MapHealthChecks("/health");
 
 app.Run();

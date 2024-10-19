@@ -9,7 +9,7 @@ public class StatusController : ControllerBase
     [HttpGet("user/status")]
     public async Task<IActionResult> GetStatus()
     {
-        //await Task.Delay(4000);
+        await Task.Delay(4000);
         var status = new
         {
             Status = "Healthy",

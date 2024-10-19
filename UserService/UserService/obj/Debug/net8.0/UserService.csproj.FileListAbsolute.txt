@@ -162,3 +162,9 @@
 /home/maria/UNI/YEAR 4/UserService/UserService/obj/Debug/net8.0/UserService.pdb
 /home/maria/UNI/YEAR 4/UserService/UserService/obj/Debug/net8.0/UserService.genruntimeconfig.cache
 /home/maria/UNI/YEAR 4/UserService/UserService/obj/Debug/net8.0/ref/UserService.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UserService/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll

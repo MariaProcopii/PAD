@@ -152,3 +152,13 @@
 /home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/obj/Debug/net8.0/CookingBlogService.pdb
 /home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/obj/Debug/net8.0/CookingBlogService.genruntimeconfig.cache
 /home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/obj/Debug/net8.0/ref/CookingBlogService.dll
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/out/web.config
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/web.config
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/appsettings.Development.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/appsettings.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/CookingBlogService.deps.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/CookingBlogService.runtimeconfig.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/out/appsettings.Development.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/out/appsettings.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/out/CookingBlogService.deps.json
+/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/bin/Debug/net8.0/out/out/CookingBlogService.runtimeconfig.json

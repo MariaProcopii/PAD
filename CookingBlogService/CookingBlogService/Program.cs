@@ -22,7 +22,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
 var app = builder.Build();
-
+app.MapHealthChecks("/blog/health");
 
 if (app.Environment.IsDevelopment())
 {
@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseMiddleware<RequestTimeoutMiddleware>(TimeSpan.FromSeconds(3));
+app.UseMiddleware<HealthMonitoringMiddleware>();
 
 var webSocketOptions = new WebSocketOptions
 {
@@ -47,7 +48,5 @@ app.MapControllers();
 app.Services.GetRequiredService<RedisSubscriber>();
 
 app.UseDiscoveryClient();
-
-app.MapHealthChecks("/health");
 
 app.Run();

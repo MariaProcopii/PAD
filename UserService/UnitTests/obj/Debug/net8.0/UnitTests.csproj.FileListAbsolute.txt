@@ -177,3 +177,9 @@
 /home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/UserService.runtimeconfig.json
 /home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/UserService.deps.json
 /home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/UserService.runtimeconfig.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
