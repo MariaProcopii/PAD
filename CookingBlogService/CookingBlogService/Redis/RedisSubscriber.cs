@@ -9,7 +9,7 @@ public class RedisSubscriber
 
     public RedisSubscriber()
     {
-        _redis = ConnectionMultiplexer.Connect("localhost");
+        _redis = ConnectionMultiplexer.Connect("my-redis-db");
         Subscribe();
     }
 

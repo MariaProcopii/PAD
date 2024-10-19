@@ -127,7 +127,7 @@ namespace CookingBlogService.Controllers
         {
             _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", accessToken);
-            var response = await _httpClient.GetAsync($"http://localhost:8080/user/profile/{userId}");
+            var response = await _httpClient.GetAsync($"http://my-gateway-app:8080/user/profile/{userId}");
 
             if (response.IsSuccessStatusCode)
             {

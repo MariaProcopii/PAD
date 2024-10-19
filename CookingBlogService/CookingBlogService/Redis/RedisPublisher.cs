@@ -4,7 +4,7 @@ using StackExchange.Redis;
 
 public static class RedisPublisher
 {
-    private static readonly ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+    private static readonly ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("my-redis-db");
 
     public static async Task PublishMessage(string message, string senderSocketId)
     {

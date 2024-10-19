@@ -167,3 +167,13 @@
 /home/maria/UNI/YEAR 4/UserService/UnitTests/obj/Debug/net8.0/UnitTests.pdb
 /home/maria/UNI/YEAR 4/UserService/UnitTests/obj/Debug/net8.0/UnitTests.genruntimeconfig.cache
 /home/maria/UNI/YEAR 4/UserService/UnitTests/obj/Debug/net8.0/ref/UnitTests.dll
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/web.config
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/web.config
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/appsettings.Development.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/appsettings.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/appsettings.Development.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/appsettings.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/UserService.deps.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/out/UserService.runtimeconfig.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/UserService.deps.json
+/home/maria/UNI/YEAR 4/UserService/UnitTests/bin/Debug/net8.0/out/UserService.runtimeconfig.json

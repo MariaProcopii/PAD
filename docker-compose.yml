@@ -1,0 +1,173 @@
+services:
+  my-service-discovery-app:
+    build:
+      context: ./service.discovery/.
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    container_name: my-service-discovery-app
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - app-network
+
+  my-gateway-app:
+    build:
+      context: ./gateway/.
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: my-gateway-app
+    depends_on:
+      my-service-discovery-app:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - app-network
+
+  my-cooking-service1:
+    build:
+      context: ./CookingBlogService/CookingBlogService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5096:5096"
+    container_name: my-cooking-service1
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5096
+      - PORT=5096
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      my-gateway-app:
+        condition: service_healthy
+    networks:
+      - app-network
+    
+  my-cooking-service2:
+    build:
+      context: ./CookingBlogService/CookingBlogService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5097:5097"
+    container_name: my-cooking-service2
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5097
+      - PORT=5097
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      - my-cooking-service1
+    networks:
+      - app-network
+  
+  my-cooking-service3:
+    build:
+      context: ./CookingBlogService/CookingBlogService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5098:5098"
+    container_name: my-cooking-service3
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5098
+      - PORT=5098
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      - my-cooking-service2
+    networks:
+      - app-network
+
+  my-user-service1:
+    build:
+      context: ./UserService/UserService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5236:5236"
+    container_name: my-user-service1
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5236
+      - PORT=5236
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      my-gateway-app:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  my-user-service2:
+    build:
+      context: ./UserService/UserService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5237:5237"
+    container_name: my-user-service2
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5237
+      - PORT=5237
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      - my-user-service1
+    networks:
+      - app-network
+
+  my-user-service3:
+    build:
+      context: ./UserService/UserService/.
+      dockerfile: Dockerfile
+    ports:
+      - "5238:5238"
+    container_name: my-user-service3
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5238
+      - PORT=5238
+      - PATH=$PATH:/root/.dotnet/tools
+    depends_on:
+      - my-user-service2
+    networks:
+      - app-network      
+  
+  my-postgresql-db:
+    build:
+      context: ./postgresql.db/.
+      dockerfile: Dockerfile
+    container_name: my-postgresql-db
+    environment:
+      POSTGRES_DB: cookingblogservice
+      POSTGRES_USER: maria
+      POSTGRES_PASSWORD: maria
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  my-redis-db:
+    image: redis:latest
+    container_name: my-redis-db
+    ports:
+      - "6380:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+  redisdata:
