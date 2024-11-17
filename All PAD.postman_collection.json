@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "e568dff7-4278-48fb-b06f-b52e3f7ba1fd",
+		"name": "All PAD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23859445"
+	},
+	"item": [
+		{
+			"name": "Cooking Blog Service",
+			"item": [
+				{
+					"name": "Get All recepies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8JdPkYGMYrBNvsmF-v_sT1jkq3_d9fnqxiOwyTBrsVgUy8wf_br7_TPs4qbGNKP1MXEIBrw4Xn4F3ksM8oYXUSgV4Svmg5HYp4sxH8zJ-O3YGNAeLW8bg-qRhuUkiKNcP0zjTfyB8-VFn8z-6jLF_H_hMnKbp-Q338Ut9UrIutR8Vk5tZJtl_K4O5BlPLEpGaCYK3FwyZ328nRhHTwKjl7DxqKuHC31WN6y4huIwSO1s1QI91h3u_CNgJLwjweffm7j3bUjT-X1-2HYNuYu0VTA6ZjZzH2FBb8Gnl5o8JQbYGSwkugY2-GT4qw33jsd409CmOvaZn8q6a0uB_GRe4BSpGuP9obUkZTjaTlfRYlGnrRXRk4y6Xyp_0-HHJRExGb7soIsGWA8BgtnEtHN4HsdphUul8J3u2_wZVZz0AwZPIBNk0m1EBxTmYhCglYLbtwNBWkuP-a1X3_kxcejDGcSThaMsEAJma4Xc3ewkE-tjh0ig99w7aRcojjwIhUYt2ksjihxhd-7TBirNyJ_WHfnJQa5DFWW8VUXu7HtIZO-fA3oR-JSP797qstBJmEYHwFbMbFpW8Pac25vKqirZfmht0TXCGoiJEfJQX5kZAw7K_fmoyLMjC0oD7mLHSrdcSvHPiDgsExHzq70tBIUpd3ZqpfhINorbVtHedSIMgwFb83o4IIegnVmLBad3WsMVzPy-mMXhLzBRMnDXoLgtGpUcxiHEhR-cyRDeeWlNsTeD"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/recipe"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a recipe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8JdPkYGMYrBNvsmF-v_sT1jkq3_d9fnqxiOwyTBrsVgUy8wf_br7_TPs4qbGNKP1MXEIBrw4Xn4F3ksM8oYXUSgV4Svmg5HYp4sxH8zJ-O3YGNAeLW8bg-qRhuUkiKNcP0zjTfyB8-VFn8z-6jLF_H_hMnKbp-Q338Ut9UrIutR8Vk5tZJtl_K4O5BlPLEpGaCYK3FwyZ328nRhHTwKjl7DxqKuHC31WN6y4huIwSO1s1QI91h3u_CNgJLwjweffm7j3bUjT-X1-2HYNuYu0VTA6ZjZzH2FBb8Gnl5o8JQbYGSwkugY2-GT4qw33jsd409CmOvaZn8q6a0uB_GRe4BSpGuP9obUkZTjaTlfRYlGnrRXRk4y6Xyp_0-HHJRExGb7soIsGWA8BgtnEtHN4HsdphUul8J3u2_wZVZz0AwZPIBNk0m1EBxTmYhCglYLbtwNBWkuP-a1X3_kxcejDGcSThaMsEAJma4Xc3ewkE-tjh0ig99w7aRcojjwIhUYt2ksjihxhd-7TBirNyJ_WHfnJQa5DFWW8VUXu7HtIZO-fA3oR-JSP797qstBJmEYHwFbMbFpW8Pac25vKqirZfmht0TXCGoiJEfJQX5kZAw7K_fmoyLMjC0oD7mLHSrdcSvHPiDgsExHzq70tBIUpd3ZqpfhINorbVtHedSIMgwFb83o4IIegnVmLBad3WsMVzPy-mMXhLzBRMnDXoLgtGpUcxiHEhR-cyRDeeWlNsTeD"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"title\": \"Pasta Carbonara\",\n        \"description\": \"Here is the recepie\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/recipe/post/092ab992-5a72-48a8-80c2-b91641684ecc"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8JdPkYGMYrBNvsmF-v_sT1jkq3_d9fnqxiOwyTBrsVgUy8wf_br7_TPs4qbGNKP1MXEIBrw4Xn4F3ksM8oYXUSgV4Svmg5HYp4sxH8zJ-O3YGNAeLW8bg-qRhuUkiKNcP0zjTfyB8-VFn8z-6jLF_H_hMnKbp-Q338Ut9UrIutR8Vk5tZJtl_K4O5BlPLEpGaCYK3FwyZ328nRhHTwKjl7DxqKuHC31WN6y4huIwSO1s1QI91h3u_CNgJLwjweffm7j3bUjT-X1-2HYNuYu0VTA6ZjZzH2FBb8Gnl5o8JQbYGSwkugY2-GT4qw33jsd409CmOvaZn8q6a0uB_GRe4BSpGuP9obUkZTjaTlfRYlGnrRXRk4y6Xyp_0-HHJRExGb7soIsGWA8BgtnEtHN4HsdphUul8J3u2_wZVZz0AwZPIBNk0m1EBxTmYhCglYLbtwNBWkuP-a1X3_kxcejDGcSThaMsEAJma4Xc3ewkE-tjh0ig99w7aRcojjwIhUYt2ksjihxhd-7TBirNyJ_WHfnJQa5DFWW8VUXu7HtIZO-fA3oR-JSP797qstBJmEYHwFbMbFpW8Pac25vKqirZfmht0TXCGoiJEfJQX5kZAw7K_fmoyLMjC0oD7mLHSrdcSvHPiDgsExHzq70tBIUpd3ZqpfhINorbVtHedSIMgwFb83o4IIegnVmLBad3WsMVzPy-mMXhLzBRMnDXoLgtGpUcxiHEhR-cyRDeeWlNsTeD"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/recipe/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Recipe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8JdPkYGMYrBNvsmF-v_sT1jkq3_d9fnqxiOwyTBrsVgUy8wf_br7_TPs4qbGNKP1MXEIBrw4Xn4F3ksM8oYXUSgV4Svmg5HYp4sxH8zJ-O3YGNAeLW8bg-qRhuUkiKNcP0zjTfyB8-VFn8z-6jLF_H_hMnKbp-Q338Ut9UrIutR8Vk5tZJtl_K4O5BlPLEpGaCYK3FwyZ328nRhHTwKjl7DxqKuHC31WN6y4huIwSO1s1QI91h3u_CNgJLwjweffm7j3bUjT-X1-2HYNuYu0VTA6ZjZzH2FBb8Gnl5o8JQbYGSwkugY2-GT4qw33jsd409CmOvaZn8q6a0uB_GRe4BSpGuP9obUkZTjaTlfRYlGnrRXRk4y6Xyp_0-HHJRExGb7soIsGWA8BgtnEtHN4HsdphUul8J3u2_wZVZz0AwZPIBNk0m1EBxTmYhCglYLbtwNBWkuP-a1X3_kxcejDGcSThaMsEAJma4Xc3ewkE-tjh0ig99w7aRcojjwIhUYt2ksjihxhd-7TBirNyJ_WHfnJQa5DFWW8VUXu7HtIZO-fA3oR-JSP797qstBJmEYHwFbMbFpW8Pac25vKqirZfmht0TXCGoiJEfJQX5kZAw7K_fmoyLMjC0oD7mLHSrdcSvHPiDgsExHzq70tBIUpd3ZqpfhINorbVtHedSIMgwFb83o4IIegnVmLBad3WsMVzPy-mMXhLzBRMnDXoLgtGpUcxiHEhR-cyRDeeWlNsTeD"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"title\": \"Pasta Carbonara v2\",\n        \"description\": \"Mix hot cooked pasta vigorously with the guanciale, egg, cheese and a splash of pasta cooking water and watch as it transforms into a luxurious, ...\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/recipe/edit/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Status endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/blog/health"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Status Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/health"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Discovery",
+			"item": [
+				{
+					"name": "Status Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8761/actuator/health"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"alexandr.procopii@gmail.com\",\n  \"password\": \"Admin1~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"alexandr.procopii@gmail.com\",\n  \"password\": \"Admin1~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8NN_wiXRGtxPo_kmMKo95VYgrFfx64QjtxTI158LPZSsI4_reCCHb3X8FRDObRBsEJyOvRA4OuZCJxiK9p_4_ll_ACiV1Swc__o9pxVWdMwe9psADa82F34B7qSwamA20TRuXeMecbLskKYEKVOPC1n1PYBFcYPfSplggM_zxlG6Pk2vlR0gWr2O27v8KSWDNFh9VKHYPIFZX4fFk45ZVADHQybDHIuY-EX9WhDXKjb1zTDRvsTyNuvtNf15_e77WGtO3ZIPxc9k6keKdkmRT7VCeUy9icLl-qgxCV1yIACL_Fcw2bCBho5J9laIG3Y0tXP_kk74ZJJJ1DvHEWG3wP7XjfhJ0YoYeRsCFoC_gE5V8Lk6iJtXgh55AvS-tAWuLaGoC3l-7wgEOcMJ0IcCzCEHAXqqUwVcSnS8CT5w2TKkGEJw4bOJccHnIw4uLEwpWGgokiGiDUzfa2rEpuzcAHWmqqBQirynF-yeP30zjWu4mV5oEa6fdcZEVJZreB5lu1OaVKtvsvvCzbyqQ-esyomX4dmmtzK0_zOm90yex-APnIFoq8El7XntCSZsPnG2c3Lpn3ivzAfX_nYnfl4Iw8DnJvZjqTk3zaJMQJWEOJfswHJucRpYjBiAg9b76sdwVPtU6UqBxqKfaZ3H6qgHMViLOJOB0DumDaDIk2AoMN2-hSWicUYIjTiXkTxXIu4iq6Pe_acmuZ30WSarW5wzYcSK1HGqAmaQE_Li4dJLOB8l"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user/profile/ffee6267-ad9c-4e03-92b1-09337ef54703"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "CfDJ8JdPkYGMYrBNvsmF-v_sT1jkq3_d9fnqxiOwyTBrsVgUy8wf_br7_TPs4qbGNKP1MXEIBrw4Xn4F3ksM8oYXUSgV4Svmg5HYp4sxH8zJ-O3YGNAeLW8bg-qRhuUkiKNcP0zjTfyB8-VFn8z-6jLF_H_hMnKbp-Q338Ut9UrIutR8Vk5tZJtl_K4O5BlPLEpGaCYK3FwyZ328nRhHTwKjl7DxqKuHC31WN6y4huIwSO1s1QI91h3u_CNgJLwjweffm7j3bUjT-X1-2HYNuYu0VTA6ZjZzH2FBb8Gnl5o8JQbYGSwkugY2-GT4qw33jsd409CmOvaZn8q6a0uB_GRe4BSpGuP9obUkZTjaTlfRYlGnrRXRk4y6Xyp_0-HHJRExGb7soIsGWA8BgtnEtHN4HsdphUul8J3u2_wZVZz0AwZPIBNk0m1EBxTmYhCglYLbtwNBWkuP-a1X3_kxcejDGcSThaMsEAJma4Xc3ewkE-tjh0ig99w7aRcojjwIhUYt2ksjihxhd-7TBirNyJ_WHfnJQa5DFWW8VUXu7HtIZO-fA3oR-JSP797qstBJmEYHwFbMbFpW8Pac25vKqirZfmht0TXCGoiJEfJQX5kZAw7K_fmoyLMjC0oD7mLHSrdcSvHPiDgsExHzq70tBIUpd3ZqpfhINorbVtHedSIMgwFb83o4IIegnVmLBad3WsMVzPy-mMXhLzBRMnDXoLgtGpUcxiHEhR-cyRDeeWlNsTeD"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Alexandru\",\n  \"email\": \"alexandr.procopii@gmail.com\",\n  \"password\": \"Admin1~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/user/profile/edit/092ab992-5a72-48a8-80c2-b91641684ecc"
+					},
+					"response": []
+				},
+				{
+					"name": "Status endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user/health"
+					},
+					"response": []
+				},
+				{
+					"name": "Request with delay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user/status"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
