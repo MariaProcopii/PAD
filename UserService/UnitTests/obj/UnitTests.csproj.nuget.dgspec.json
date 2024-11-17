@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/maria/UNI/YEAR 4/UserService/UnitTests/UnitTests.csproj": {}
+    "/home/maria/UNI/YEAR 4/PAD/UserService/UnitTests/UnitTests.csproj": {}
   },
   "projects": {
-    "/home/maria/UNI/YEAR 4/UserService/UnitTests/UnitTests.csproj": {
+    "/home/maria/UNI/YEAR 4/PAD/UserService/UnitTests/UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/maria/UNI/YEAR 4/UserService/UnitTests/UnitTests.csproj",
+        "projectUniqueName": "/home/maria/UNI/YEAR 4/PAD/UserService/UnitTests/UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "/home/maria/UNI/YEAR 4/UserService/UnitTests/UnitTests.csproj",
+        "projectPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UnitTests/UnitTests.csproj",
         "packagesPath": "/home/maria/.nuget/packages/",
-        "outputPath": "/home/maria/UNI/YEAR 4/UserService/UnitTests/obj/",
+        "outputPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UnitTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/maria/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj": {
-                "projectPath": "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj"
+              "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj": {
+                "projectPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj": {
+    "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj",
+        "projectUniqueName": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj",
         "projectName": "UserService",
-        "projectPath": "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj",
+        "projectPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj",
         "packagesPath": "/home/maria/.nuget/packages/",
-        "outputPath": "/home/maria/UNI/YEAR 4/UserService/UserService/obj/",
+        "outputPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/maria/.nuget/NuGet/NuGet.Config"

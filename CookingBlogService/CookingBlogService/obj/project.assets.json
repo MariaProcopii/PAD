@@ -10656,11 +10656,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/CookingBlogService.csproj",
+      "projectUniqueName": "/home/maria/UNI/YEAR 4/PAD/CookingBlogService/CookingBlogService/CookingBlogService.csproj",
       "projectName": "CookingBlogService",
-      "projectPath": "/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/CookingBlogService.csproj",
+      "projectPath": "/home/maria/UNI/YEAR 4/PAD/CookingBlogService/CookingBlogService/CookingBlogService.csproj",
       "packagesPath": "/home/maria/.nuget/packages/",
-      "outputPath": "/home/maria/UNI/YEAR 4/CookingBlogService/CookingBlogService/obj/",
+      "outputPath": "/home/maria/UNI/YEAR 4/PAD/CookingBlogService/CookingBlogService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/maria/.nuget/NuGet/NuGet.Config"

@@ -10206,11 +10206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj",
+      "projectUniqueName": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj",
       "projectName": "UserService",
-      "projectPath": "/home/maria/UNI/YEAR 4/UserService/UserService/UserService.csproj",
+      "projectPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/UserService.csproj",
       "packagesPath": "/home/maria/.nuget/packages/",
-      "outputPath": "/home/maria/UNI/YEAR 4/UserService/UserService/obj/",
+      "outputPath": "/home/maria/UNI/YEAR 4/PAD/UserService/UserService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/maria/.nuget/NuGet/NuGet.Config"

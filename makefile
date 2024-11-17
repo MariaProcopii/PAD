@@ -14,10 +14,10 @@ migrations:
 	@echo "Running Migrations"
 	@export PATH="$PATH:/root/.dotnet/tools"
 	@echo "Migrating for UserService"
-	@cd ./UserService/UserService && dotnet ef database update --no-build
+	@cd ./UserService/UserService && dotnet ef database update --no-build --configuration Development
 	@echo "Done"
 	@echo "Migrating for CookingBlogService"
-	@cd ./CookingBlogService/CookingBlogService && dotnet ef database update --no-build
+	@cd ./CookingBlogService/CookingBlogService && dotnet ef database update --no-build --configuration Development
 	@echo "Done"
 
 run:
