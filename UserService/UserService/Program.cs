@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Prometheus;
 using Steeltoe.Discovery.Client;
 using Swashbuckle.AspNetCore.Filters;
 using UserService.Data;
@@ -41,6 +42,10 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 app.MapHealthChecks("/user/health");
+// Add Prometheus middleware
+app.UseHttpMetrics();
+// Expose metrics endpoint at "/metrics"
+app.MapMetrics();
 
 if (app.Environment.IsDevelopment())
 {

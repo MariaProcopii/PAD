@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'gateway'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['my-gateway-app:8080']
+
+  - job_name: 'cooking-services'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['my-cooking-service1:5096']
+      - targets: ['my-cooking-service2:5097']
+      - targets: ['my-cooking-service3:5098']
+
+  - job_name: 'user-services'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['my-user-service1:5236']
+      - targets: ['my-user-service2:5237']
+      - targets: ['my-user-service3:5238']

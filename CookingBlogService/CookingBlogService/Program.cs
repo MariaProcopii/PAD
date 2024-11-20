@@ -2,6 +2,7 @@ using CookingBlogService.Data;
 using CookingBlogService.Middleware;
 using CookingBlogService.Redis;
 using Microsoft.EntityFrameworkCore;
+using Prometheus;
 using Steeltoe.Discovery.Client;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,10 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 app.MapHealthChecks("/blog/health");
+// Add Prometheus middleware
+app.UseHttpMetrics();
+// Expose metrics endpoint at "/metrics"
+app.MapMetrics();
 
 if (app.Environment.IsDevelopment())
 {
