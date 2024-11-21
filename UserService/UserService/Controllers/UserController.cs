@@ -16,8 +16,8 @@ namespace UserService.Controllers
             _userService = userService;
         }
         
-        [HttpGet("{id}")]
-        [Authorize]
+        [HttpGet("info/{id}")]
+        // [Authorize]
         public async Task<IActionResult> GetUserById(string id)
         {
             // await Task.Delay(15000);
@@ -26,20 +26,21 @@ namespace UserService.Controllers
             UserInfoDTO userInfoDto = new UserInfoDTO
             {
                 Email = user.Email,
-                Username = user.UserName
+                Username = user.UserName,
+                Password = user.PasswordHash
             };
             return Ok(userInfoDto);
         }
 
-        [HttpDelete("{id}")]
-        [Authorize]
+        [HttpDelete("delete/{id}")]
+        // [Authorize]
         public async Task<IActionResult> DeleteUser(string id)
         {
             var result = await _userService.DeleteUser(id);
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
 
-            return Ok();
+            return Ok(id);
         }
         
         [HttpPut("edit/{id}")]
@@ -54,6 +55,16 @@ namespace UserService.Controllers
             }
 
             return Ok("User information updated successfully.");
+        }
+        
+        [HttpPost("restore")]
+        public async Task<IActionResult> RestoreUser([FromBody] UserRestoreDTO restoreDTO)
+        {
+            var result = await _userService.RestoreUser(restoreDTO.Id, restoreDTO.Email, restoreDTO.Username);
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok(restoreDTO.Id);
         }
     }
 }

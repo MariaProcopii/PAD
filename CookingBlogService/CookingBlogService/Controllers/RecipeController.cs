@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
-using System.Text.Json;
 using CookingBlogService.DTO;
 using CookingBlogService.Services;
 using CookingBlogService.Models;
@@ -80,7 +78,7 @@ namespace CookingBlogService.Controllers
         }
         
         [HttpPost("post/{ownerId}")]
-        public async Task<IActionResult> PostRecipe(string ownerId, [FromBody] RecipeDTO recipe)
+        public async Task<IActionResult> PostRecipe(string ownerId, [FromBody] CreateRecipeDTO recipe)
         {
             var accessToken = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
@@ -127,7 +125,7 @@ namespace CookingBlogService.Controllers
         {
             _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", accessToken);
-            var response = await _httpClient.GetAsync($"http://my-gateway-app:8080/user/profile/{userId}");
+            var response = await _httpClient.GetAsync($"http://my-gateway-app:8080/user/profile/info/{userId}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -137,5 +135,70 @@ namespace CookingBlogService.Controllers
 
             return null;
         }
+        
+        [HttpGet("by-owner/{ownerId}")]
+        public async Task<IActionResult> GetRecipesByOwner(string ownerId)
+        {
+            try
+            {
+                var recipes = await _recipeService.GetRecipesByOwner(ownerId);
+
+                if (recipes == null || !recipes.Any())
+                {
+                    return NotFound("No recipes found for the specified owner.");
+                }
+
+                var recipeDtos = recipes.Select(r => new RecipeDTO
+                {
+                    Id = r.Id,
+                    Title = r.Title,
+                    Description = r.Description,
+                    OwnerId = r.OwnerId
+                }).ToList();
+
+                return Ok(recipeDtos);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+        
+        [HttpDelete("delete-by-owner/{ownerId}")]
+        public async Task<IActionResult> DeleteRecipesByOwner(string ownerId)
+        {
+            try
+            {
+                var result = await _recipeService.DeleteRecipesByOwner(ownerId);
+                if (!result) return NotFound("No recipes found for this owner.");
+
+                return Ok(ownerId);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+        
+        [HttpPost("restore")]
+        public async Task<IActionResult> RestoreRecipes([FromBody] List<RecipeDTO> recipes)
+        {
+            var recipesToRestore = recipes.Select(r => new Recipe
+            {
+                Title = r.Title,
+                Description = r.Description,
+                OwnerId = r.OwnerId
+            }).ToList();
+
+            var success = await _recipeService.RestoreRecipes(recipesToRestore);
+
+            if (!success)
+            {
+                return StatusCode(500);
+            }
+
+            return Ok("Recipes restored successfully.");
+        }
+
     }
 }

@@ -53,7 +53,7 @@ namespace UnitTests.Controllers;
 
             var result = await _userController.DeleteUser(userId);
 
-            Assert.IsType<OkResult>(result);
+            Assert.IsType<OkObjectResult>(result);
         }
 
         [Fact]

@@ -66,5 +66,20 @@ namespace UserService.Services
 
             return await _userManager.DeleteAsync(user);
         }
+        
+        public async Task<IdentityResult> RestoreUser(string id, string email, string username)
+        {
+            var user = new IdentityUser
+            {
+                Id = id,
+                Email = email,
+                UserName = username,
+                NormalizedEmail = email.ToUpper(),
+                NormalizedUserName = username.ToUpper(),
+                EmailConfirmed = true
+            };
+
+            return await _userManager.CreateAsync(user);
+        }
     }
 }

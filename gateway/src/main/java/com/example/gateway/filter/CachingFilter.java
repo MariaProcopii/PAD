@@ -27,11 +27,9 @@ public class CachingFilter implements WebFilter {
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         String path = exchange.getRequest().getURI().getPath();
 
-        // Check if the path should be cached
         if (path.startsWith("/user/profile") || path.startsWith("/recipe")) {
             String cacheKey = path;
 
-            // Check if cached response exists
             String cachedResponse = cacheManager.getCache("gateway-cache").get(cacheKey, String.class);
             if (cachedResponse != null) {
                 exchange.getResponse().getHeaders().add(HttpHeaders.CONTENT_TYPE, "application/json");
@@ -42,7 +40,6 @@ public class CachingFilter implements WebFilter {
                 return exchange.getResponse().writeWith(Flux.just(buffer));
             }
 
-            // Decorate the response to capture its body
             ServerHttpResponseDecorator responseDecorator = new ServerHttpResponseDecorator(exchange.getResponse()) {
                 @Override
                 public Mono<Void> writeWith(Publisher<? extends DataBuffer> body) {
@@ -53,7 +50,6 @@ public class CachingFilter implements WebFilter {
                         dataBuffer.read(content);
                         DataBufferUtils.release(dataBuffer);
 
-                        // Cache the response body
                         cacheManager.getCache("gateway-cache").put(cacheKey, new String(content));
                         return bufferFactory().wrap(content);
                     }));
